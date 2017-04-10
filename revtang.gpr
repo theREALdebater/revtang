@@ -1,0 +1,37 @@
+project RevTang is
+
+   for Languages use ("Ada");
+   for Source_Dirs use ("./**");
+   for Main use ("adabeaut.adb", "revtang.adb");
+
+   package Pretty_Printer is
+      for Default_Switches ("ada") use ("-cl3", "-M135", "--no-separate-is", "--no-separate-loop-then", "--use-on-new-line", "--separate-stmt-name");
+   end Pretty_Printer;
+
+   package Builder is
+      for Default_Switches ("ada") use ("-s", "-g", "-C");
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnatVa", "-gnatwa", "-gnato", "-fstack-check", "-gnatE", "-gnatf", "-g", "-gnata");
+   end Compiler;
+
+   package Binder is
+      for Default_Switches ("ada") use ("-E");
+   end Binder;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-g");
+   end Linker;
+
+   for Source_Files use ("ada_configuration.ads",
+                           "ada_configuration.adb",
+                           "adabeaut_config.ads",
+                           "adabeaut_config.adb",
+                           "adabeaut.adb",
+                           "revtang_config.ads",
+                           "revtang_config.ads",
+                           "revtang.adb");
+
+end RevTang;
+
