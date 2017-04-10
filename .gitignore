@@ -3,3 +3,11 @@
 
 # Ada Library Information
 *.ali
+
+# Other stuff
+.exe
+.cswi
+.dg
+.bexch
+.cgpr
+.db
