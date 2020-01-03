@@ -5,9 +5,16 @@
 *.ali
 
 # Other stuff
-.exe
-.cswi
-.dg
-.bexch
-.cgpr
-.db
+*.exe
+*.cswi
+*.dg
+*.bexch
+*.cgpr
+*.db
+
+# Object directory
+obj/
+
+# GNAT Programming System stuff
+*-loc.xml
+

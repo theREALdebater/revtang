@@ -1,6 +1,7 @@
 with Ada.Text_IO;
 with Ada.Wide_Text_IO;
 with Ada.IO_Exceptions;
+with Ada.Exceptions;
 
 with Ada.Strings.Wide_Fixed;
 with Ada.Strings.Unbounded;
@@ -24,6 +25,7 @@ procedure adabeaut is
    --/ Exceptions:
  
    Source_Line_Too_Long : exception;
+   Fragment_Number_Error: exception;
  
    --\
    --/ Warning messages:
@@ -334,6 +336,9 @@ begin
    end loop;
    Save_Highest_Frag_Id_If_Necessary;
    --\
+exception
+   when E: others =>
+      Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, Ada.Exceptions.Exception_Information (E));
 end adabeaut;
 
 --\

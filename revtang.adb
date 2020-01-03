@@ -23,7 +23,7 @@ procedure revtang is
          Indent: Natural := 0; -- individual indent of this line
       end record;
       
-   --| A `Text-Line` contains the text of the line in `Text`, but with all leading and trailing space removed.
+   --| A `Text_Line` contains the text of the line in `Text`, but with all leading and trailing space removed.
    --| The `Indent` is the (physical) number of leading spaces removed.
    
    function Is_Empty (Line: in Text_Line) return Boolean is

@@ -1,3 +1,6 @@
+with Ada.Text_IO;
+with Ada.Exceptions;
+
 package body adabeaut_Config is
 
    use Ada_Configuration;
@@ -40,4 +43,8 @@ begin
    end;
    
    Help_Requested := Ada_Configuration.Help_Requested(Config);
+
+exception
+   when E: others =>
+      Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, Ada.Exceptions.Exception_Information (E));
 end;
