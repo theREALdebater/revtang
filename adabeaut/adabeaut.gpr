@@ -2,6 +2,7 @@ project adabeaut is
 
    for Languages use ("Ada");
    for Source_Dirs use ("./**");
+   for Excluded_Source_Dirs use (".git/**");
    for Main use ("adabeaut.adb");
 
    for Source_Files use ("ada_configuration.ads",
@@ -10,7 +11,7 @@ project adabeaut is
                          "adabeaut_config.adb",
                          "adabeaut.adb");
 
-   for Object_Dir use "obj";
+   for Object_Dir use "../obj";
 
 end adabeaut;
 
